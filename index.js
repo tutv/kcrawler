@@ -9,7 +9,7 @@ const source = 'source.txt';
 fs.writeFileSync(output, '');
 fs.writeFileSync(source, '');
 
-const url = 'http://blogk.xyz';
+const url = 'https://themeforest.net/';
 const depth = 3;
 
 function cleanContent(content) {
@@ -34,7 +34,7 @@ var crawler = Crawler(url)
             if (!error && response.statusCode == 200) {
                 let $ = cheerio.load(body);
 
-                var text = $('body').text();
+                var text = $('.canvas__body').text();
                 text = cleanContent(text);
                 fs.appendFileSync(source, text + "\n");
             }
